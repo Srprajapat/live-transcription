@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Live Transcription</title>
+</head>
+<body>
+  <h2>Live Transcription</h2>
+  <pre id="output"></pre>
+
+<script>
+const ws = new WebSocket("ws://localhost:8765");
+const output = document.getElementById("output");
+
+ws.onmessage = e => {
+  output.textContent += e.data + "\n";
+};
+
+navigator.mediaDevices.getUserMedia({ audio: true }).then(stream => {
+  const audioCtx = new AudioContext({ sampleRate: 16000 });
+  const source = audioCtx.createMediaStreamSource(stream);
+  const processor = audioCtx.createScriptProcessor(4096, 1, 1);
+
+  source.connect(processor);
+  processor.connect(audioCtx.destination);
+
+  processor.onaudioprocess = e => {
+    const input = e.inputBuffer.getChannelData(0);
+    const float32 = new Float32Array(input.length);
+    float32.set(input);
+    ws.send(float32.buffer);
+  };
+});
+</script>
+</body>
+</html>

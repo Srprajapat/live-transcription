@@ -1,7 +1,7 @@
 faster-whisper
+whisper-live
 pyaudio
 numpy 
 torch
 websockets
 asyncio
-

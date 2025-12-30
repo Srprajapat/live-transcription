@@ -1,0 +1,28 @@
+1
+00:00:12,288 --> 00:00:14,288
+ Hello, how are you?
+
+2
+00:00:36,420 --> 00:00:50,000
+ What is your name?
+
+3
+00:00:50,000 --> 00:00:52,000
+ Very good. Thank you.
+
+4
+00:01:10,349 --> 00:01:13,650
+ if nothing shows, the files might be ignored
+
+5
+00:01:38,109 --> 00:01:46,109
+ open the source control panel, left sidebar, git icon, look at the changes section, view,
+
+6
+00:01:46,109 --> 00:01:49,709
+ Files should be under-entered or staged.
+
+7
+00:03:00,240 --> 00:03:07,240
+ Hello? Hello? Hello? Hello? Hello?
+
