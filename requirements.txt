@@ -1,0 +1,7 @@
+faster-whisper
+pyaudio
+numpy 
+torch
+websockets
+asyncio
+
